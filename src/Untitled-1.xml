@@ -1,0 +1,93 @@
+/* .App {
+  text-align: center;
+}
+
+
+*{
+  box-sizing: border-box;
+}
+body {
+  background-color: #D2DBDC;
+  margin: 0;
+  font-family: segoe Ui , 
+  Helvetica Neue,
+  Helvetica, Lucida Grande, 
+  Arial;
+}
+.AppWindow {
+  display: flex;
+  height: 100vh;
+  background-color: #EDEDED;
+}
+.sidebar {
+  width: 35%;
+  max-width: 415px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #DDD;
+  padding: 0 15px;
+}
+.header--avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.header--buttons {
+  display: flex;
+
+}
+.header--btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-image: white;
+  cursor: pointer;
+}
+header {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.search{
+  background-color: #f6f6f6;
+  border-bottom: 1px solid #eee;
+  padding: 5px 15px;
+}
+.search--input{
+  background-color: #fff;
+  height: 40px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+.search--input input{
+  flex: 1px;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  margin-left: 10px;
+}
+.chatList {
+  flex: 1;
+  background-color: #fff;
+  overflow-y: auto;
+
+}  
+.chatList::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+
+}
+.chatList::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.contentearea {
+  flex: 1;
+} */

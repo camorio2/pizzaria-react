@@ -1,0 +1,99 @@
+a {
+    text-decoration: none;
+}
+.conteudo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+
+    margin: auto;
+    width: 32.8rem;
+    height: 49.6rem;
+    top: 12.2rem;
+
+    background: #fff;
+    box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.16);
+    border-radius: 1.2rem;
+}
+.arrowBack svg {
+    position: relative;
+    width: 3.2rem;
+    height: 3.2rem;
+    left: 1.6rem;
+    top: 1.6rem;
+
+    border-radius: 2.6rem;
+    background-color: #808080;
+    cursor: pointer;
+    border: 1px solid #F86E10;
+
+}
+.p,
+.groupB,
+.grupoA {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-block: auto;
+}
+.tela .conteudo .grupoA img {
+    margin-top: 5.8rem;
+    margin-left: 3.5rem;
+    margin-right: 4.2rem;
+
+    width: 28.3rem;
+    height: 22.6rem;
+}
+.tela .groupB a{
+    margin-top: 1rem;
+}
+.tela .conteudo .groupB .button .p {
+   
+    width: 10.2rem;
+    height: 2.8rem;
+   
+    
+
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.2rem;
+    line-height: 2.8rem;
+    margin-block: auto;
+
+
+    text-align: center;
+
+    color: #FFFFFF;
+
+}
+
+.tela .conteudo .groupB .p {
+    margin-top: 1.6rem;
+    width: 16.9rem;
+    height: 2.8rem;
+    left: 9.5rem;
+    top: 47.8rem;
+
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.2rem;
+    line-height: 2.8rem;
+
+
+    text-align: center;
+
+    color: #F86E10;
+    cursor: pointer;
+    text-decoration: none;
+
+}
+.tela .conteudo .groupB .p:hover {
+    color: #808080;
+}
