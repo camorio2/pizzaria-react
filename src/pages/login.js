@@ -1,7 +1,7 @@
 import firebase from 'firebase/app';
 
 import { useNavigate } from "react-router-dom";
-import useState from "react";
+import { useState } from "react";
 import './login.css'
 
 import Api from '../Api';
@@ -23,8 +23,8 @@ import Api from '../Api';
 //       [name]: value,
 //     });
 //   }
-//   const navigate = useNavigate();
-//   const entrar = () => {
+//   
+
 //     if (
 //       //hardcoded - hard('duro, rígido') + coded('codificado') = codificado de forma rígida
 //       values.text = 'Temotio',
@@ -37,7 +37,6 @@ import Api from '../Api';
 //       alert('ERROR: NOT FOUND');
 //     }
 //   }
-
 
 //   return (
 //     <div className='telaLogin'>
@@ -101,29 +100,43 @@ import Api from '../Api';
 
 
 
+
 export const LoginScreen = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
-  const [isAuthenticated, setIsAuthenticated] = useState()
-  const navigate = useNavigate();
-
+  console.log(email)
   const ArrowBack = () => {
     navigate("/")
   }
-
-
-  const handleLogin = async e => {
-    const { email, password } = this.useState;
-    try {
-      const user = await firebase.auth()
-        .signInWithEmailAndPassword(email, password);
-      this.setState({ isAuthenticated: true })
+  const HandleClick = async () => {
+    const users = await Api.listUsers();
+    const user = users.find(user => user.email === email);
+    if (user.email == email
+      &
+      user.password == password) {
       navigate("/")
-      console.log(user)
-    } catch (error) {
-      alert('dados não encontrados!!')
+    } else  {
+      alert('o campo de email nao esta preenchido')
     }
 
+    // const user = users.find(user => user.email === email)
+    // if (user.password === password) {
+    //   navigate("/")
+    // }else {
+    //   alert('errado')
+    // }
+  }
+
+  const handleChangeEmail = (e) => {
+    const newEmail = e.target.value
+
+    setEmail(newEmail)
+  }
+
+  const handleChangePassword = (e) => {
+    const newPassword = e.target.value
+    setPassword(newPassword)
   }
 
   return (
@@ -148,8 +161,12 @@ export const LoginScreen = () => {
             name='email'
             className='btn'
             type='email'
+            onblur="validacaoEmail(f1.email)" 
             placeholder='Digite seu email'
-            onChange={e => setEmail(e.target.value)}
+            maxlength="60"
+            onChange={handleChangeEmail}
+            value={email}
+
           />
         </div>
         <div>
@@ -158,18 +175,19 @@ export const LoginScreen = () => {
             name='password'
             className='btn'
             type='password'
+            maxlength="10"
             placeholder='Digite sua senha'
-            onChange={e => setPassword(e.target.value)}
+            onChange={handleChangePassword}
+            value={password}
+
           />
         </div>
         <p id="mensagemErro"></p>
       </div>
-      <button className="button" type="submit" onClick={handleLogin}>
-        <a href="">
-          <p className="p">
-            Entrar
-          </p>
-        </a>
+      <button className="button" type="submit" onClick={HandleClick}>
+        <p className="p">
+          Entrar
+        </p>
       </button>
     </div>
   );
