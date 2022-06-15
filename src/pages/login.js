@@ -1,103 +1,12 @@
 import firebase from 'firebase/app';
 
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+
 import './login.css'
 
 import Api from '../Api';
-
-
-
-// import Home from './components/routes/home';
-// function initialState() {
-//   return { text: '', email: '', password: '' };
-// }
-
-// export const LoginScreen = () => {
-//   const [values, setValues] = useState(initialState);
-
-//   function onChange(evento) {
-//     const { value, name } = evento.target;
-//     setValues({
-//       ...values,
-//       [name]: value,
-//     });
-//   }
-//   
-
-//     if (
-//       //hardcoded - hard('duro, rígido') + coded('codificado') = codificado de forma rígida
-//       values.text = 'Temotio',
-//       values.email == 'oitomitluis32@gmail.com'
-//       &
-//       values.password == 'senhabemlegal'
-//     ) {
-//       navigate("/home");
-//     } else {
-//       alert('ERROR: NOT FOUND');
-//     }
-//   }
-
-//   return (
-//     <div className='telaLogin'>
-//         <div className='login'>
-//           <img className="newChat--itemavatar" src='https://www.olgastore.online/wp-content/uploads/2020/07/Ong-Junta-Mais-Capa-Olga-Store.jpg' alt="" />
-//           <div className='btnName'>
-//             <PersonIcon />
-//             <input
-//               name='text'
-//               className='btn'
-//               type='text'
-//               placeholder='Digite seu nome'
-//               onChange={onChange}
-//               value={values.text}
-//             />
-//           </div>
-//           <div className='btnEmail'>
-//             <EmailIcon />
-//             <input
-//               name='email'
-//               className='btn'
-//               type='email'
-//               placeholder='Digite seu Emeil'
-//               onChange={onChange}
-//               value={values.email}
-//             />
-//           </div>
-//           <div className='btnSenha'>
-//             <LockIcon />
-//             <input
-//               name='password'
-//               className='btn'
-//               type='password'
-//               placeholder='Digite sua senha'
-//               onChange={onChange}
-//               value={values.password}
-//             />
-//           </div>
-//           <div>
-//             <p className='plogin'>Já tem uma conta?
-//               <strong
-//                 className='linkLogin'>
-//                 login
-//               </strong>
-//             </p>
-//           </div>
-
-//           <div className='btnSubmite'>
-//             <button
-//               className='submite'
-//               type='submit'
-//               onClick={entrar}
-//             >
-//               Entrar
-//             </button>
-//           </div>
-//         </div>
-//     </div>
-//   );
-// }
-
+import { useContext, useState } from 'react';
+import { UserContext } from '../contexts/UserContext';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -105,20 +14,30 @@ export const LoginScreen = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
-  console.log(email)
+
+  const {user, setUser} = useContext(UserContext)
+
+
+  
   const ArrowBack = () => {
     navigate("/")
   }
+
   const HandleClick = async () => {
     const users = await Api.listUsers();
     const user = users.find(user => user.email === email);
-    if (user.email == email
-      &
+    if (user.email == email &&
       user.password == password) {
-      navigate("/")
-    } else  {
+        const {password, ...info} = user
+        
+        setUser(info)
+        localStorage.setItem('user', JSON.stringify(info))
+      navigate("/home")
+    } else {
       alert('o campo de email nao esta preenchido')
     }
+
+    
 
     // const user = users.find(user => user.email === email)
     // if (user.password === password) {
@@ -158,10 +77,10 @@ export const LoginScreen = () => {
         <div>
           <p>Email:</p>
           <input
-            name='email'
+            name='email' 
             className='btn'
             type='email'
-            onblur="validacaoEmail(f1.email)" 
+            onBlur="validacaoEmail(f1.email)"
             placeholder='Digite seu email'
             maxlength="60"
             onChange={handleChangeEmail}

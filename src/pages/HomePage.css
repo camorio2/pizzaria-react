@@ -1,0 +1,309 @@
+.logos {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-inline: auto;
+    gap: 4rem;
+}
+
+.logos svg {
+    width: 24.6rem;
+    height: 5.1rem;
+    left: 1.1rem;
+
+    font-size: 4rem;
+    margin-left: 1.1rem;
+    margin-right: 10.3rem;
+    margin-top: 7.1rem;
+    margin-bottom: 3.9rem;
+
+
+    filter: drop-shadow(0px -1px 4px rgba(0, 0, 0, 0.45)) drop-shadow(0px 1px 6px rgba(0, 0, 0, 0.4));
+}
+
+.logos img {
+    margin: 4.3rem 2.4rem 5.2rem 3.2rem;
+    border-radius: 3.6rem;
+
+    display: block;
+    width: 7rem;
+    height: 7rem;
+
+
+    max-width: 100%;
+    border: 2px solid #F86E10;
+    cursor: pointer;
+}
+
+.pesquisa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    width: 29.7rem;
+    height: 3.1rem;
+    margin-inline: auto;
+    border-radius: 1.5rem;
+    margin-top: 1rem;
+    border: 1px solid #F86E10;
+
+
+}
+
+.pesquisa input {
+    width: 25.8rem;
+    height: 1.3rem;
+    left: 4rem;
+    top: 16.5rem;
+
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    border: none;
+}
+
+
+.selecao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-inline: auto;
+    width: 34.9rem;
+    height: 4.8rem;
+    left: 4rem;
+
+    margin-top: 19.7rem;
+}
+
+.selecao .celec {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 14rem;
+    height: 5rem;
+
+
+
+    background: #FFFFFF;
+    box-shadow: 0 0 1em gold;
+    margin-block: auto;
+    border-bottom: 0.4rem solid #7CB518;
+}
+
+.selecao .celec:hover {
+    color: red;
+    border-bottom: 7px solid red;
+}
+
+.selecao .celec p {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    /* identical to box height, or 133% */
+
+    text-align: center;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+
+
+    color: #7CB518;
+
+
+}
+
+.resultado {
+    position: absolute;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: red;
+
+}
+
+.carts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.carts .cart {
+    width: 22.4rem;
+    height: auto;
+    left: 4rem;
+    top: 26rem;
+    margin-top: 1rem;
+
+    background: #FFFFFF;
+    box-shadow: 1.5rem 1.5rem 1rem gray;
+}
+
+#card {
+    margin-bottom: 6rem;
+}
+
+.carts .cart img {
+    width: 22.4rem;
+    height: 16.7rem;
+}
+
+.carts .cart h3 {
+    text-align: center;
+
+    top: 37.1rem;
+
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.2rem;
+
+    color: #F86E10;
+}
+
+.carts .cart .svg1 {
+    position: absolute;
+    width: 22.4rem;
+
+}
+
+.carts .cart svg {
+    float: right;
+    width: 3.4rem;
+    height: 3.4rem;
+    margin-top: -0.5rem;
+}
+
+.carts .cart p {
+    text-align: center;
+    left: 2.3rem;
+    top: 38.5rem;
+
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.6rem;
+    line-height: 0.8rem;
+    text-align: center;
+
+    color: #F86E10;
+
+}
+
+.carts .cart .plublicador {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    padding-bottom: 1.3rem;
+}
+
+.carts .cart .plublicador img {
+
+    width: 3.3rem;
+    height: 3.3rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-radius: 2rem;
+}
+
+.carts .cart .plublicador p {
+    font-family: 'Quicksand';
+
+
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.8rem;
+    line-height: 0.9rem;
+    margin-bottom: -1rem;
+    text-align: center;
+
+
+    color: #525252;
+    opacity: 0.4;
+}
+
+.carts .cart .plublicador .svg {
+
+    margin-bottom: -2rem;
+    margin-left: 5rem;
+    float: right;
+
+
+}
+
+.carts .cart .plublicador .svg svg {
+    width: 3rem;
+    height: 3rem;
+    margin-left: -1rem;
+
+
+}
+
+.fim {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-inline: auto;
+    width: 25.8rem;
+    height: 1.3rem;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    color: #525252;
+    margin-block: 6.4rem;
+
+    opacity: 0.85;
+}
+.before {
+    position: fixed;
+    width: 4.2rem;
+    height: 4.3rem;
+    float: right;
+    top: 51rem;
+    right: 0;
+    bottom: 0;
+    border-radius: 2.2rem;
+    text-align: center;
+    font-size: 3rem;
+    color: aliceblue;
+    cursor: pointer;
+    margin-right: 1.5rem;
+
+    background: #F86E10;
+    box-shadow: 0.3rem 0.3rem 1rem rgba(0, 0, 0, 0.8);
+}
+.before:hover {
+    color: #F86E10;
+    background-color: white;
+    filter: brightness(1.2);
+}
+.tela .selecao  .celec a{
+    text-decoration: none;
+}
+.tela .before a {
+    text-decoration: none;
+    color: white;
+}
+.tela .before a:hover {
+    color: #F86E10;
+}
+.selecao .celec:nth-child(2) p {
+    color: red;
+}
+
+.selecao .celec:nth-child(2) {
+    border-bottom: 0.4rem solid red;
+}

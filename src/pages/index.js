@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import './index.css';
 
 import { navigate, useNavigate } from "react-router-dom";
+import { UserContext } from "../contexts/UserContext";
 
 
 
-export const HomePage = () => {
+export const WelcomePage = () => {
+
+    const {user } = useContext(UserContext)
+
+
     const navigate = useNavigate();
     var login = "login"
     var registro = "Cadastro"
@@ -31,6 +36,10 @@ export const HomePage = () => {
         navigate("/login");
     }
 
+    if(user) {
+        //se já houver dados de usuário, redireciona para a home
+        navigate('/home')
+    }
     return (
         <div className="tela">
             <div className="arrowBack" onClick={windows}>
@@ -45,7 +54,7 @@ export const HomePage = () => {
 
 
                 <div className="grupoA">
-                    <img src="Grup 71.png" />
+                    <img src={"../assets/timo.jpg" }/>
                 </div>
 
                 <div className="groupB">
