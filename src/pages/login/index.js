@@ -3,9 +3,9 @@ import firebase from 'firebase/app';
 
 import './login.css'
 
-import Api from '../Api';
+import Api from '../../Api';
 import { useContext, useState } from 'react';
-import { UserContext } from '../contexts/UserContext';
+import { UserContext } from '../../contexts/UserContext';
 import { useNavigate } from 'react-router-dom';
 
 

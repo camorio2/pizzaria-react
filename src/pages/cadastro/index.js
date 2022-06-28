@@ -1,7 +1,7 @@
 import React from "react";
 import "./cadastro.css";
 
-import Api from "../Api";
+import Api from "../../Api";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import firebase from "firebase";

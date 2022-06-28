@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import './index.css';
+import './welcome.css';
 
 import { navigate, useNavigate } from "react-router-dom";
-import { UserContext } from "../contexts/UserContext";
+import { UserContext } from "../../contexts/UserContext";
 
 
 

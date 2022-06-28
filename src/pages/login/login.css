@@ -1,10 +1,8 @@
 .tela {
   width: 100%;
   height: 100vh;
-  background-image: url('../../assets/Papel_de_Parede3.jpg');
   background-size: 100%;
 }
-
 header,
 .info-header {
   display: flex;
@@ -136,4 +134,3 @@ header,
   border: 1px solid #F86E10;
 
 }
-

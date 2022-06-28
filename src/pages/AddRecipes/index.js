@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import './AddRecipes.css'
 
 import { useNavigate } from 'react-router-dom';
-import Api from "../Api";
+import Api from "../../Api";
 
 
 export const AddRecipesUser = () => {

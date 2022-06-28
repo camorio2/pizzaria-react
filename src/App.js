@@ -2,9 +2,9 @@ import { Routes, Route } from "react-router-dom"
 import './App.css';
 
 import { LoginScreen } from "./pages/login";
-import { WelcomePage } from "./pages/index";
+import { WelcomePage } from "./pages/welcome/index";
 import { CadastroScreen } from "./pages/cadastro";
-import { HomeScreen } from "./pages/HomePage";
+import { HomeScreen } from "./pages/ListRecipes";
 import { UserProvider } from "./contexts/UserContext";
 import { AddRecipesUser } from "./pages/AddRecipes";
 

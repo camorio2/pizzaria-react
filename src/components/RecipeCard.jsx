@@ -1,11 +1,8 @@
 // import { storage } from "../Api"
 
 export const RecipeCard = ({ recipe }) => {
-
     const { image, title, description, author, ranking } = recipe
-    
     if(!recipe) return <></>
-
     // const imagePath = storage.refFromURL(image).getDownloadURL()
     return <div className="cart">
         <div className="svg1">
@@ -69,7 +66,7 @@ export const RecipeCard = ({ recipe }) => {
         <div >
             <img
                 src={author?.image}
-                alt="UMmenino negro segurando celular"
+                alt=""
             />
 
             <p>{author?.name}</p>
