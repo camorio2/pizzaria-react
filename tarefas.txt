@@ -1,0 +1,29 @@
+Criar usuário
+    - Tela de login
+    - Criar usuário na base do Firebase
+Login
+    - Tela de login
+    - Autenticar pelo Firebase
+    
+Criar uma receita
+    - Tela de criação de receita
+    - Formulário para nova receita
+    - Pegar imagem do usuário
+    - Salvar receita na base de dados do Firebase
+    - Salvar imagem no Storage do Firebase
+
+Editar uma receita
+    - Tela de editar receita
+    - Formulário de editar receitas
+    - Possibilitar alterar a imagem no Storage
+    - Sobrescrever receita na base do Firebase
+
+Listar/Buscar receitas
+    - Tela de listagem de receitas
+    - Listar todas as receitas da base
+    - Possibilitar filtro(busca)
+
+Deletar receitas
+    - Tela de confirmação de deleção
+    - Remover receita da base do Firebase
+    - Remover imagem do Storage
