@@ -1,15 +1,4 @@
-.addrecipes {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    background-color: pink;
-    width: 100%;
-    height: 100vh;
-}
-
-.menuitens {
+.menuitensuser {
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -17,9 +6,7 @@
     justify-content: center;
     width: 15rem;
     height: auto;
-    margin-left: 2rem;
-    margin-top: 5rem;
-    background-color: #F86E10;
+    background-color:#c58357;
     color: aliceblue;
     text-transform: uppercase;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
@@ -28,7 +15,7 @@
     transform: translateX(0);
 }
 
-.aItens {
+.aIten {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -49,13 +36,13 @@
     cursor: pointer;
 }
 
-.ocultar {
+.noShow {
     visibility: visible;
     transition: transform 400ms;
     transform: translateY(50%);
 }
 
-.aItens:hover {
+.aIten:hover {
     filter: brightness(1.5);
     color: #560cab;
     font-size: 1.5rem;
@@ -71,14 +58,7 @@
 .b {
     border-left: 2px solid rgb(56, 52, 52);
 }
-.c {
-    background-color:#c58357;
+.d {
+    background-color: #F86E10;
     color: #443c4c;
-}
-.iconsstyle {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 80%;
-    gap: 1rem;
 }

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suas Receitas</title>
+    <link rel="stylesheet" href="../index.css">
+    <style>
+        body {
+            background-image: url('../assets/Papel_de_Parede3.jpg');
+            background-size: cover;
+        }
+
+        .tela .pages a:nth-child(4) {
+            color: black;
+            border-width: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tela">
+        <div class="arrowBack">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="white" />
+                <path
+                    d="M24.0156 15.0156V16.9844H11.8281L17.4062 22.6094L16 24.0156L7.98438 16L16 7.98438L17.4062 9.39062L11.8281 15.0156H24.0156Z"
+                    fill="#333333" />
+            </svg>
+        </div>
+        <section>
+            <div class="imgSvg">
+                <img src="../assets/timo.jpg" alt="uma foto do perfil" onclick="perfilUsuario()">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="14" cy="14" r="14" fill="#FA8927" />
+                    <path
+                        d="M8 18.292V21H10.708L18.6946 13.0133L15.9867 10.3054L8 18.292ZM20.7888 10.9192C21.0704 10.6376 21.0704 10.1826 20.7888 9.90099L19.099 8.21122C18.8174 7.92959 18.3624 7.92959 18.0808 8.21122L16.7593 9.5327L19.4673 12.2407L20.7888 10.9192Z"
+                        fill="white" />
+                </svg>
+
+            </div>
+            <div class="userMiniInfo">
+                <p>Temotio Luis Bernardo</p>
+                <p>Deste Agosto de 2021</p>
+            </div>
+        </section>
+        <div class="pages">
+            <a href="../index/perfil_Usuario.html">info</a>
+            <a href="../index/perfil_seguindo.html">Seguindo</a>
+            <a href="../index/principalPreferencia.html">Preferências</a>
+            <a href="../index/suaReceitas.html">Suas Receitas</a>
+        </div>
+        <div class="pageSlids">
+            <div class="slids">
+                <img src="../assets/image 1 (5).png" alt="">
+                <p>
+                    Macarão
+                </p>
+                <p class="clutens">
+                    <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.59 10.58L1.42 6.41L0 7.82L5.59 13.41L17.59 1.41L16.18 0L5.59 10.58Z" fill="black"/>
+                        </svg>
+                        
+                    Sem Glútem / Ligth
+                </p>
+            </div>
+            <div class="slids">
+                <img src="../assets/churus.jpg" alt="">
+                <p>
+                    Outro Nome
+                </p>
+                <p class="clutens">
+                    <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.59 10.58L1.42 6.41L0 7.82L5.59 13.41L17.59 1.41L16.18 0L5.59 10.58Z" fill="black"/>
+                        </svg>
+                        
+                    Sem Glútem / Ligth
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="../index.js"></script>
+</body>
+
+</html>

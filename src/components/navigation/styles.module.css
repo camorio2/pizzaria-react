@@ -1,0 +1,38 @@
+.container {
+    /* background-color: green; */
+    
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.container a {
+    text-decoration: none;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    color: #a29f9f;
+
+}
+
+
+
+.container .active {
+    color: black ;
+    border-bottom: 3px solid #F86E10;
+}
+
+
+.container a:hover {
+    color: black;
+    border-bottom: 3px solid #F86E10;
+}
+
+

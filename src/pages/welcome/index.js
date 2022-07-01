@@ -3,7 +3,7 @@ import './welcome.css';
 
 import { navigate, useNavigate } from "react-router-dom";
 import { UserContext } from "../../contexts/UserContext";
-
+import Grupo71 from '../../assets/Group 71.png'
 
 
 export const WelcomePage = () => {
@@ -54,7 +54,7 @@ export const WelcomePage = () => {
 
 
                 <div className="grupoA">
-                    <img src={"../assets/timo.jpg" }/>
+                    <img src={Grupo71}/>
                 </div>
 
                 <div className="groupB">
