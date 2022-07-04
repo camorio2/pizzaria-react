@@ -23,16 +23,17 @@ export default () => {
         <Route path="/" element={< WelcomePage />} />
         <Route path="/login" element={<LoginScreen />} />
         <Route path="/cadastro" element={<CadastroScreen />} />
-        <Route path="/home" element={<HomeScreen />} />
+        <Route path="/recipes" element={<HomeScreen />} />
+        <Route path="/recipes/:id" element={<DetailsRecipes />}/>
+        {/* <Route path="/recipes/:id/edit" element={<DetailsRecipes />}/> */}
+        <Route path="/recipes/new" element={<AddRecipesUser />} />
         <Route path="/seguindo" element={<Seguindo />} />
-        <Route path="/add-recipes" element={<AddRecipesUser />} />
         <Route path="/perfiluser" element={<PerfilUser />} />
         <Route path="/perfilSeguindo" element={<UserFavoritePage />}/>
         <Route path="/perfilPreferencia" element={<PerfilUserPrefrencia />}/>
         <Route path="/perfilminhasreceitas" element={<MyRecipesPage />}/>
-        <Route path="/detalhesRecipes" element={<DetailsRecipes />}/>
       </Routes>
     </UserProvider>
     </>
-  );
+  
 };

@@ -3,7 +3,7 @@ import '../../AddRecipes/index.css'
 import Image from '../../../assets/timo.jpg'
 import Image1 from '../../../assets/image 1 (2).png'
 import Image2 from '../../../assets//image 2.png'
-import Image3 from '../../../assets/image 1 (6).png'
+import Image3 from '../../../assets/lasanha.png'
 import { Navigation } from '../../../components/navigation'
 import { MenuItensPerfilUser } from '../../../components/logos/menu/menuPerfilUser'
 

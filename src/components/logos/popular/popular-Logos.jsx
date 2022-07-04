@@ -15,7 +15,7 @@ export const PopularLogos = () => {
     const handleChangeEmail = (e) => {
         const newEmail = e.target.value
 
-        setEmail(newEmail)
+        // setEmail(newEmail)
     }
     // function searchFood(event) {
     //     //Ler o valor do input de busca.

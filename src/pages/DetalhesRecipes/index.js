@@ -3,13 +3,29 @@ import Image from '../../assets/image 2.png'
 import StarHalfIcon from '@mui/icons-material/StarHalf';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Temotio from '../../assets/timo.jpg'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import Api from '../../Api';
 
 export const DetailsRecipes = () => {
+    const { id } = useParams()
     const navigator = useNavigate();
+    const [recipeData, setRecipeData] = useState()
     const HandleHome = () => {
         navigator('/home')
     }
+    useEffect(async ()=>{
+        const doc = await Api.getRecipe(id)
+        if (doc.exists) {
+            const data = doc.data()
+            console.log("Document data:", data);
+            setRecipeData(data)
+
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+        }
+    }, [])
     return (
         <div className="tela Detalhes">
             <div className='h1Titulo'>
@@ -28,11 +44,9 @@ export const DetailsRecipes = () => {
                 </div>
                 <div className='GropoB'>
                     <div className='GropoAB'>
-                        <h2 className='h2d'>Churos com Churos</h2>
+                        <h2 className='h2d'>{recipeData?.title}</h2>
                         <p className='ABC'>
-                            É possível enviar SMS com texto, fotos e até áudios dentro do aplicativo. Se você gosta de ter apps do Google em seu smartphone Android, esta é com certeza a melhor opção.
-                            Hang out anytime, anywhere ... Messenger makes it easy and fun to stay close to your favorite people. ... New! Message your Instagram friends right from Messenger.
-                            Text messages are used for personal, family, business and social purposes. Governmental and non-governmental organizations use text messaging for communication between colleagues. In the 2010s, the sending of short informal messages became an accepted part of many cultures, as happened earlier with emailing.[1] This makes texting a quick and easy way to communicate with friends, family and colleagues, including in contexts where a call would be impolite or inappropriate (e.g., calling very late at night or when one knows the other person is busy with family or work activities). Like e-mail and voicemail and unlike calls (in which the caller hopes to speak directly with the recipient), texting does not require
+                            {recipeData?.description}
                         </p>
                         <div className='ABCD'>
                             <p className='aaa'>vegetariano</p>

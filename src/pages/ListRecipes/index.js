@@ -7,6 +7,7 @@ import { UserContext } from "../../contexts/UserContext";
 
 import { PopularLogos } from "../../components/logos/popular/popular-Logos";
 import { RecipeCard } from "../../components/RecipeCard";
+import { Link } from "react-router-dom";
 export const HomeScreen = () => {
   const { user } = useContext(UserContext);
   const [recipes, setRecipes] = useState([]);
@@ -19,7 +20,7 @@ export const HomeScreen = () => {
       <PopularLogos />
       <div id="carts" className="carts">
         {recipes.map((item) => {
-          return <RecipeCard key={item.title} recipe={item} />;
+          return <Link to={`/recipes/${item.id}`}><RecipeCard key={item.title} recipe={item} /></Link>;
         })}
       </div>
       <h2 className="fim">Parece que você chegou ao fim</h2>

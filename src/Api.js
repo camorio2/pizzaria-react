@@ -32,12 +32,15 @@ export default {
 
     console.log("items:", images);
     let results = await db.collection("recipes").get();
-    results.forEach((recipe) => list.push(recipe.data()));
+    results.forEach((recipe) => list.push({...recipe.data(), id: recipe.id}));
     return list;
   },
   addRecipe: async (recipe) => {
     let createdRecipe = await db.collection("recipes").add(recipe);
     return createdRecipe.get();
+  },
+  getRecipe: async (recipeId) => {
+    return await db.collection('recipes').doc(recipeId).get()
   },
   getRecipeImage: async (recipeId) => {
     const imgUrl = await storage.child(`recipes/${recipeId}`).getDownloadURL();
