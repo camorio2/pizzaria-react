@@ -4,12 +4,38 @@ import Temotio from '../../../assets/timo.jpg'
 import { Link, useNavigate } from "react-router-dom";
 import './popular-Logos.css'
 import { MenuItens } from "../menu/menuItens";
+import { useState } from "react";
 
 export const PopularLogos = () => {
+    const [searchFoods, setSearchFood] = useState('');
     const navigate = useNavigate();
     const HandleAddRecipe = () => {
         navigate('/add-recipes')
     }
+    const handleChangeEmail = (e) => {
+        const newEmail = e.target.value
+
+        setEmail(newEmail)
+    }
+    // function searchFood(event) {
+    //     //Ler o valor do input de busca.
+    //     const resultadoNaoEncontrado = document.querySelector('h1.resultado')
+    //     const valorPesquisado = event.target.value.toLowerCase()
+    //     //Encontrar a lista de cards no HTML.
+    //     const carts = document.querySelectorAll('.cart')
+
+    //     //Para cada  um dos cards ler o titulo da comida.
+    //     carts.forEach(cart => {
+    //         const titulo = cart.querySelector('h3').innerHTML.toLowerCase()
+    //         //Para os titulos que contem  o valor da busca esconder o card.
+
+    //         if (!titulo.includes(valorPesquisado)) {
+    //             cart.style.display = 'none'
+    //         } else {
+    //             cart.style.display = 'block'
+    //         }
+    //     })
+    // }
     const pesquisar = () => { };
 
     const searchFood = () => { };
@@ -28,7 +54,7 @@ export const PopularLogos = () => {
 
     //     }
     // }
-  
+
     const hndlePerfilUser = () => {
         navigate('/perfiluser')
     }
@@ -38,7 +64,7 @@ export const PopularLogos = () => {
             <div className="before" onClick={HandleAddRecipe}>
                 +
             </div>
-            <MenuItens/>
+            <MenuItens />
             <div className="logos">
                 <Logo />
                 <img
@@ -57,6 +83,8 @@ export const PopularLogos = () => {
                     type="search"
                     placeholder="O que vamos cozinhar hoje?"
                     onKeyUp={searchFood}
+                    onChange={handleChangeEmail}
+                    value={searchFoods}
                 />
                 <svg
                     onClick={pesquisar}

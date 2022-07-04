@@ -1,13 +1,17 @@
 import './conponents.css';
 import Churros from '../assets/churus.jpg';
 import Temotio from '../assets/timo.jpg';
-
+import { useNavigate } from 'react-router-dom';
 import StarHalfIcon from '@mui/icons-material/StarHalf';
 import StarIcon from '@mui/icons-material/Star';
 
+
 export const RecipeCard = ({ recipe }) => {
+    const navigate = useNavigate();
     const HandleEddRecipes = () => {
-        alert('você esta nos detalhes dessa receita')
+        alert('Você esta entrando nos detalhes dessa receita')
+        console.log('você', recipe)
+        navigate('/detalhesRecipes')
     }
     const texto = 'Enviado por'
     const name = 'Temótio Luis'
@@ -15,7 +19,7 @@ export const RecipeCard = ({ recipe }) => {
     if (!recipe) return <></>
     // const imagePath = storage.refFromURL(image).getDownloadURL()
     return (
-        <div className="cart">
+        <div className="cart" onClick={HandleEddRecipes} >
             <div className="svg1">
                 <svg
                     width="24"
@@ -68,7 +72,7 @@ export const RecipeCard = ({ recipe }) => {
                     </defs>
                 </svg>
             </div>
-            <img src={Churros} onClick={HandleEddRecipes} />
+            <img src={Churros}/>
             <h3>{title}</h3>
             <p>
                 {description}
