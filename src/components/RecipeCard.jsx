@@ -89,5 +89,7 @@ export const RecipeCard = ({ recipe }) => {
                 </div>
             </div>
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};

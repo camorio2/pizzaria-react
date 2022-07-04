@@ -8,19 +8,18 @@ import { UserContext } from "../../contexts/UserContext";
 import { PopularLogos } from "../../components/logos/popular/popular-Logos";
 import { RecipeCard } from "../../components/RecipeCard";
 export const HomeScreen = () => {
-
   const { user } = useContext(UserContext);
-  const [recipes, setRecipes] = useState([])
+  const [recipes, setRecipes] = useState([]);
   useEffect(async () => {
-    const result = await Api.listRecipes()
-    setRecipes(result)
-  }, [])
+    const result = await Api.listRecipes();
+    setRecipes(result);
+  }, []);
   return (
     <div id="pagePrincipal" className="tela">
       <PopularLogos />
       <div id="carts" className="carts">
         {recipes.map((item) => {
-          return <RecipeCard key={item.title} recipe={item} />
+          return <RecipeCard key={item.title} recipe={item} />;
         })}
       </div>
       <h2 className="fim">Parece que você chegou ao fim</h2>
@@ -28,7 +27,8 @@ export const HomeScreen = () => {
   );
 };
 //RECERSA DOS CARTS
-{/* <div>
+{
+  /* <div>
   <div className="cart">
 
 
@@ -545,4 +545,5 @@ export const HomeScreen = () => {
       </div>
     </div>
   </div>
-</div> */}
+</div> */
+}

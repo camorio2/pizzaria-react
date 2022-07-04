@@ -1,5 +1,5 @@
-import { Routes, Route } from "react-router-dom"
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
 
 import { LoginScreen } from "./pages/login";
 import { WelcomePage } from "./pages/welcome/index";
@@ -34,6 +34,5 @@ export default () => {
       </Routes>
     </UserProvider>
     </>
-   
-  
-}
+  );
+};
