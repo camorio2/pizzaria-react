@@ -19,9 +19,9 @@ Editar uma receita
     - Sobrescrever receita na base do Firebase
 
 Listar/Buscar receitas
-    - Tela de listagem de receitas
+    - Tela de listagem de receitas foi
     - Listar todas as receitas da base
-    - Possibilitar filtro(busca)
+    - Possibilitar filtro(busca) pendente
 
 Deletar receitas
     - Tela de confirmação de deleção
@@ -32,3 +32,9 @@ Responsividade
     - Deixar o aplicativo para as telas menores:
     - netbook
     - android
+
+
+1
+criar receita
+pegar id da receita criada 
+fazer upload da imagem com nome sendo id da receita
