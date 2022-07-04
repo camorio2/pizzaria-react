@@ -1,17 +1,20 @@
-// import { storage } from "../Api"
+import "./conponents.css";
+import Churros from "../assets/churus.jpg";
+import Temotio from "../assets/timo.jpg";
+
+import StarHalfIcon from "@mui/icons-material/StarHalf";
+import StarIcon from "@mui/icons-material/Star";
 
 import { useEffect, useState } from "react";
 import Api from "../Api";
 
 export const RecipeCard = ({ recipe }) => {
+  const HandleEddRecipes = () => {
+    alert("você esta nos detalhes dessa receita");
+  };
+  const texto = "Enviado por";
+  const name = "Temótio Luis";
   const { image, title, description, author, ranking } = recipe;
-  const [imageUrl, setImageUrl] = useState(null);
-  useEffect(async () => {
-    const imageUrl = await Api.getRecipeImage("churus.jpg");
-    if (!imageUrl) return;
-    setImageUrl(imageUrl);
-  }, []);
-
   if (!recipe) return <></>;
   // const imagePath = storage.refFromURL(image).getDownloadURL()
   return (
@@ -68,15 +71,16 @@ export const RecipeCard = ({ recipe }) => {
           </defs>
         </svg>
       </div>
-      {imageUrl && <img src={imageUrl} alt="" />}
-
+      <img src={Churros} onClick={HandleEddRecipes} />
       <h3>{title}</h3>
       <p>{description}</p>
-      <div>
-        <img src={author?.image} alt="" />
-
-        <p>{author?.name}</p>
-        <div className="svg">{ranking}</div>
+      <div className="plublicador">
+        <img src={Temotio} alt="" />
+        <h6>{texto + "..." + name}</h6>
+        <div className="svg">
+          <p className="rankink">{ranking}</p>
+          <StarHalfIcon className="icons" />
+        </div>
       </div>
     </div>
   );

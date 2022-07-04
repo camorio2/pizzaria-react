@@ -1,0 +1,15 @@
+.ingredients a p {
+    color: #7CB518 !important;
+}
+.ingredients {
+    border-bottom: 5px solid #7CB518 !important;
+}
+.ingredients:hover {
+    border-bottom: 5px solid red !important;
+}
+.a .celec:nth-child(3) {
+    border-bottom: 5px solid red !important;
+}
+.a .celec:nth-child(3) a p {
+    color: red !important;
+}
