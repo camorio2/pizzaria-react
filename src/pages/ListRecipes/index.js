@@ -8,28 +8,26 @@ import { RecipeCard } from "../../components/RecipeCard";
 import { Alert } from "react-native-web";
 import { useNavigate } from "react-router-dom";
 
-
-
 export const HomeScreen = () => {
   const navigate = useNavigate();
   const { user } = useContext(UserContext);
-  const [recipes, setRecipes] = useState([])
+  const [recipes, setRecipes] = useState([]);
   const pesquisar = () => {};
 
   const viwUser = () => {};
   const searchFood = () => {};
   const showPage = () => {
-    Alert('Chegou para adicionar uma receita???')
-    navigate('/add-recipes')
+    Alert("Chegou para adicionar uma receita???");
+    navigate("/add-recipes");
   };
   const showPageInsert = () => {};
 
-  useEffect(async ()=>{
-    const result = await Api.listRecipes()
-    setRecipes(result)
-    }, [])
+  useEffect(async () => {
+    const result = await Api.listRecipes();
+    setRecipes(result);
+  }, []);
 
-    console.log('recipes', recipes)
+  // console.log("recipes", recipes);
   return (
     <div id="pagePrincipal" className="tela">
       <div className="before" onClick={showPage}>
@@ -52,7 +50,7 @@ export const HomeScreen = () => {
       </div>
       <div className="logos">
         <Logo />
-       
+
         <img
           onClick={viwUser}
           src={
@@ -105,11 +103,11 @@ export const HomeScreen = () => {
       {/* <!-- CARSTS --> */}
       <div id="carts" className="carts">
         <h1 className="resultado">Nenhum resultado encontrado</h1>
-        {recipes.map((item)=>{
-            return <RecipeCard key={item.title} recipe={item}/>
+        {recipes.map((item) => {
+          return <RecipeCard key={item.title} recipe={item} />;
         })}
       </div>
-       
+
       <h2 className="fim">Parece que você chegou ao fim</h2>
     </div>
   );
