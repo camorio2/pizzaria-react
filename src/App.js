@@ -12,6 +12,7 @@ import { PerfilUser } from "./pages/UsuarioPges/perfil-user/perfil-user";
 import { UserFavoritePage } from "./pages/UsuarioPges/perfil-user-sequindo/perfil-user-seguindo";
 import { PerfilUserPrefrencia } from "./pages/UsuarioPges/perfil-user-preferencia/perfil-user-preferencia";
 import { MyRecipesPage } from "./pages/UsuarioPges/perfil-minhas-receitas/perfil-minhas-reitas";
+import { DetailsRecipes } from "./pages/DetalhesRecipes";
 
 
 
@@ -29,6 +30,7 @@ export default () => {
         <Route path="/perfilSeguindo" element={<UserFavoritePage />}/>
         <Route path="/perfilPreferencia" element={<PerfilUserPrefrencia />}/>
         <Route path="/perfilminhasreceitas" element={<MyRecipesPage />}/>
+        <Route path="/detalhesRecipes" element={<DetailsRecipes />}/>
       </Routes>
     </UserProvider>
     </>
