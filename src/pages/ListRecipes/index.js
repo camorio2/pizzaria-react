@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import '../AddRecipes/index.css'
 import "./ListRecipes.css";
 import { useState, useEffect } from "react";
 import Api from "../../Api";
@@ -20,7 +21,9 @@ export const HomeScreen = () => {
       <PopularLogos />
       <div id="carts" className="carts">
         {recipes.map((item) => {
-          return <Link to={`/recipes/${item.id}`}><RecipeCard key={item.title} recipe={item} /></Link>;
+          return <Link to={`/recipes/${item.id}`}>
+            <RecipeCard key={item.title} recipe={item} />
+          </Link>;
         })}
       </div>
       <h2 className="fim">Parece que você chegou ao fim</h2>

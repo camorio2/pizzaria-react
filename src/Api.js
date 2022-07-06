@@ -35,9 +35,28 @@ export default {
     results.forEach((recipe) => list.push({...recipe.data(), id: recipe.id}));
     return list;
   },
+  // selecionado a lista de recita favorita
+  listRecipesFavorite: async () => {
+    let listFavorite = [];
+    let results = await db.collection("recipeFavorites").get();
+    results.forEach((recipe) => listFavorite.push({...recipe.data(), id: recipe.id}));
+    return listFavorite;
+  },
+  // selecionado a lista de recitas do usuario seguindo
+  listRecipesUser: async () => {
+    let listRecipesUser = [];
+    let results = await db.collection("recipesUser").get();
+    results.forEach((recipe) => listRecipesUser.push({...recipe.data(), id: recipe.id}));
+    return listRecipesUser;
+  },
   addRecipe: async (recipe) => {
     let createdRecipe = await db.collection("recipes").add(recipe);
     return createdRecipe.get();
+  },
+  // Adicionar uma receita aos favortos
+  addRecipeFavorites: async (recipe) => {
+    let AddReciperFovorites = await db.collection("recipeFavorites").add(recipe);
+    return AddReciperFovorites.get();
   },
   getRecipe: async (recipeId) => {
     return await db.collection('recipes').doc(recipeId).get()

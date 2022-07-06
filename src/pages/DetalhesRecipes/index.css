@@ -34,6 +34,7 @@
     max-width: 90%;
     min-width: 50%;
     height: 90%;
+    margin-inline: auto;
 
 }
 
@@ -70,6 +71,7 @@
     height: 100%;
     background-color: black;
     border: 2px solid rgb(227, 217, 217);
+    overflow: auto;
 }
 
 .GropoAB {
@@ -98,6 +100,7 @@ color: #F86E10;
     border: 2px solid rgb(227, 217, 217);
     background-color: #fff;
     padding: 10px;
+    overflow: auto;
 }
 
 .infoDetalhesUser {
@@ -111,6 +114,7 @@ color: #F86E10;
     color: #F86E10;
     padding: 10px;
     gap: 1rem;
+    overflow: auto;
 }
 
 .infoDetalhesUser img {
@@ -161,6 +165,7 @@ color: #F86E10;
     border: 2px solid rgb(227, 217, 217);
     flex-wrap: wrap;
     padding: 15px;
+    overflow: auto;
 }
 
 .aaa {
@@ -177,10 +182,12 @@ color: #F86E10;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 10px;
     width: 90%;
-    height: 5rem;
-    border: 2px solid rgb(227, 217, 217);
+    height: auto;
+    min-height: 5rem;
+    
 }
 .bbb {
     display: flex;
@@ -190,9 +197,24 @@ color: #F86E10;
     color: #cf804b;
     width: 9.3rem;
     height: auto;
-    min-height: 2rem;
+    min-height: 3rem;
     background-color: rgb(228, 217, 217);
     border: 2px solid rgb(164, 158, 158);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    cursor: pointer;
+}
+.bbbs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    width: 9.3rem;
+    height: auto;
+    min-height: 3rem;
+    background-color: #cf804b;
+    border: 2px solid rgb(113, 84, 84);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
     cursor: pointer;
 }
 .bbb:hover {

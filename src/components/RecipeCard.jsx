@@ -11,13 +11,13 @@ export const RecipeCard = ({ recipe }) => {
     const HandleEddRecipes = () => {
         alert('Você esta entrando nos detalhes dessa receita')
         console.log('você', recipe)
-        navigate('/detalhesRecipes')
+        navigate('/recipes/:id')
     }
     const texto = 'Enviado por'
     const name = 'Temótio Luis'
     const { image, title, description, author, ranking } = recipe
     if (!recipe) return <></>
-    // const imagePath = storage.refFromURL(image).getDownloadURL()
+   
     return (
         <div className="cart" onClick={HandleEddRecipes} >
             <div className="svg1">
@@ -72,7 +72,7 @@ export const RecipeCard = ({ recipe }) => {
                     </defs>
                 </svg>
             </div>
-            <img src={Churros}/>
+            <img src={Churros} />
             <h3>{title}</h3>
             <p>
                 {description}
@@ -89,6 +89,6 @@ export const RecipeCard = ({ recipe }) => {
                 </div>
             </div>
         </div>
-      
-  );
+
+    );
 };

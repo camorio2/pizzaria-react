@@ -6,17 +6,17 @@ import { useState, useEffect } from "react"
 import Api from "../../Api"
 
 export const Seguindo = () => {
-    const [recipes, setRecipes] = useState([])
+    const [recipesFavorite, setRecipesFavorite] = useState([])
   useEffect(async () => {
-    const result = await Api.listRecipes()
-    setRecipes(result)
+    const result = await Api.listRecipesFavorite();
+    setRecipesFavorite(result)
   }, [])
     return (
         <div className="tela">
             <LogosSeguindo />
             <h3 className="h3">Esta aqui é a pagina de favorites</h3>
             <div id="carts" className="carts">
-                {recipes.map((item) => {
+                {recipesFavorite.map((item) => {
                     return <RecipeCard key={item.title} recipe={item} />
                 })}
             </div>

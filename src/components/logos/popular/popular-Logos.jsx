@@ -13,9 +13,8 @@ export const PopularLogos = () => {
         navigate('/add-recipes')
     }
     const handleChangeEmail = (e) => {
-        const newEmail = e.target.value
+        const setSearch = e.target.value;
 
-        // setEmail(newEmail)
     }
     // function searchFood(event) {
     //     //Ler o valor do input de busca.
@@ -84,7 +83,7 @@ export const PopularLogos = () => {
                     placeholder="O que vamos cozinhar hoje?"
                     onKeyUp={searchFood}
                     onChange={handleChangeEmail}
-                    value={searchFoods}
+                    value={setSearchFood}
                 />
                 <svg
                     onClick={pesquisar}

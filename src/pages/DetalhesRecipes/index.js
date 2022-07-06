@@ -14,18 +14,27 @@ export const DetailsRecipes = () => {
     const HandleHome = () => {
         navigator('/home')
     }
-    useEffect(async ()=>{
+    useEffect(async () => {
         const doc = await Api.getRecipe(id)
         if (doc.exists) {
             const data = doc.data()
-            console.log("Document data:", data);
             setRecipeData(data)
-
         } else {
             // doc.data() will be undefined in this case
             console.log("No such document!");
         }
     }, [])
+    const [addRecipeFavorite, setAddRecipeFavorite] = useState(
+        {
+            title: 'pao da vida',
+            description: 'pao da vida',
+            ranking: 'pao da vida',
+        }
+    );
+    const AddFovorites = async () => { 
+        const result = await Api.addRecipeFavorites(addRecipeFavorite);
+        alert('Este receita está sendo addicionado na página de favoritos')
+    }
     return (
         <div className="tela Detalhes">
             <div className='h1Titulo'>
@@ -57,7 +66,7 @@ export const DetailsRecipes = () => {
                             <img src={Temotio} />
                             <p className='name'>Temotio Luis Bernardo</p>
                             <div className='parte2Detalhes'>
-                                <p >5.0</p>
+                                <p >{recipeData?.ranking}</p>
                                 <p>
                                     <StarHalfIcon />
                                 </p>
@@ -65,7 +74,7 @@ export const DetailsRecipes = () => {
                         </div>
                     </div>
                     <div className='roatape'>
-                        <p className='bbb'>
+                        <p className='bbb' onClick={AddFovorites}>
                             Adicionar nos Favorotos
                         </p>
                         <p className='bbb'>
@@ -73,6 +82,16 @@ export const DetailsRecipes = () => {
                         </p>
                         <p className='bbb'>
                             Marcar Para Fazer Esta Receita
+                        </p>
+                        <p className='bbb'>
+                            Seguir Este Usúario e Suas Postagens
+                        </p>
+                        <p className='bbbs'>
+                            Denunciar Usuario,
+                            Postagens
+                        </p>
+                        <p className='bbbs'>
+                            Enviar Uma Reclamação
                         </p>
                     </div>
                 </div>
