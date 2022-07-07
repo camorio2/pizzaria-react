@@ -61,6 +61,9 @@ export default {
   getRecipe: async (recipeId) => {
     return await db.collection('recipes').doc(recipeId).get()
   },
+  getRecipeFavorite: async (recipeId) => {
+    return await db.collection('recipeFavorites').doc(recipeId).get()
+  },
   getRecipeImage: async (recipeId) => {
     const imgUrl = await storage.child(`recipes/${recipeId}`).getDownloadURL();
     return imgUrl;

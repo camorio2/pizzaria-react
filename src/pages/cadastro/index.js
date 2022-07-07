@@ -15,8 +15,6 @@ export const CadastroScreen = () => {
     const back = () => {
         navegate("/")
     }
-
-
     // const createUser = async (a) => {
     //     const user = await Api.createUser({
     //         name: a.text,

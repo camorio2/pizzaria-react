@@ -26,12 +26,12 @@ export const DetailsRecipes = () => {
     }, [])
     const [addRecipeFavorite, setAddRecipeFavorite] = useState(
         {
-            title: 'pao da vida',
-            description: 'pao da vida',
-            ranking: 'pao da vida',
+            title: recipeData?.title,
+            description: recipeData?.description,
+            ranking: recipeData?.ranking,
         }
     );
-    const AddFovorites = async () => { 
+    const AddFovorites = async () => {
         const result = await Api.addRecipeFavorites(addRecipeFavorite);
         alert('Este receita está sendo addicionado na página de favoritos')
     }
