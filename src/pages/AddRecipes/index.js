@@ -38,7 +38,6 @@ export const AddRecipesUser = () => {
         })
     }
     const HandleAddRecipe = () => {
-
     }
     const HandleHome = () => {
         Navigate('/home')
@@ -72,10 +71,7 @@ export const AddRecipesUser = () => {
 
                             </div>
                         </div>
-                        +
-                    </div>
-                    <MenuItens/>
-                    <div className="logos">
+                        + </div> <MenuItens/> <div className="logos">
                         <Logo />
                         <img
                             onClick={hndlePerfilUser}

@@ -14,15 +14,10 @@ export const LoginScreen = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
-
   const {user, setUser} = useContext(UserContext)
-
-
-  
   const ArrowBack = () => {
     navigate("/")
   }
-
   const HandleClick = async () => {
     const users = await Api.listUsers();
     const user = users.find(user => user.email === email);
@@ -46,22 +41,15 @@ export const LoginScreen = () => {
     //   alert('errado')
     // }
   }
-
   const handleChangeEmail = (e) => {
     const newEmail = e.target.value
 
     setEmail(newEmail)
   }
-
   const handleChangePassword = (e) => {
     const newPassword = e.target.value
     setPassword(newPassword)
   }
-
-
-
-
-  
   return (
     <div className="tela">
       <a >
@@ -102,7 +90,6 @@ export const LoginScreen = () => {
             placeholder='Digite sua senha'
             onChange={handleChangePassword}
             value={password}
-
           />
         </div>
         <p id="mensagemErro"></p>
