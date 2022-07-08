@@ -418,7 +418,7 @@ header,
     margin-top: 5rem;
     flex-wrap: wrap;
     gap: 2rem;
-   
+
 }
 
 .carts .cart {
@@ -1199,12 +1199,14 @@ input:checked+.slider:before {
     position: fixed;
     color: #ccc;
 }
+
 .ingredients {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+
 .titulo {
     display: flex !important;
     align-items: center !important;
@@ -1212,21 +1214,48 @@ input:checked+.slider:before {
     height: 6rem !important;
     text-align: center !important;
 }
+
 .border {
     outline: none;
 }
+
 .userInfo {
     margin-top: -15rem;
 }
+
 .userPerfil,
 .userSeguindo,
 .perfilPreferencia,
-.perfilminhasreceitas   {
+.perfilminhasreceitas {
     background-image: url('../../assets/Papel_de_Parede3.jpg');
     background-size: cover;
 
 }
+
 /* geral */
 input {
     outline: none !important;
+}
+
+.oculta {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    height: auto;
+    margin-top: -12rem;
+    background-color: #F86E10;
+    color: aliceblue;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    transition: transform 400ms;
+    visibility: hidden;
+    transform: translateY(0);
+}
+
+.itens {
+    visibility: visible;
+    transition: transform 400ms;
+    transform: translateX(0);
 }
