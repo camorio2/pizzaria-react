@@ -36,16 +36,19 @@ export default {
   listRecipes: async () => {
     let list = [];
     const images = await (await storage.child("recipes").listAll()).items;
-
-    console.log("items:", images);
     let results = await db.collection("recipes").get();
     results.forEach((recipe) => list.push({ ...recipe.data(), id: recipe.id }));
     return list;
   },
   // selecionado a lista de recita favorita
-  listRecipesFavorite: async () => {
+  listFavoriteRecipes: async (userId) => {
+    console.log("userId", userId);
     let listFavorite = [];
-    let results = await db.collection("recipeFavorites").get();
+    let results = await db
+      .collection("favoriteRecipes")
+      .where("userId", "==", userId)
+      .get();
+    console.log("results", results);
     results.forEach((recipe) =>
       listFavorite.push({ ...recipe.data(), id: recipe.id })
     );
@@ -65,7 +68,7 @@ export default {
     return createdRecipe.get();
   },
   // Adicionar uma receita aos favortos
-  addRecipeFavorites: async (userId, recipeId) => {
+  addRecipeFavorites: async ({ userId, recipeId }) => {
     let AddReciperFovorites = await db
       .collection("favoriteRecipes")
       .add({ userId, recipeId });
