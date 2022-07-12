@@ -11,20 +11,21 @@ export const storage = firebase.storage().ref();
 
 export default {
   createUser: async (u) => {
-    try{
-
-      const createdUser = await firebase.auth().createUserWithEmailAndPassword(u.email, u.password)
-      return await db.collection("users").set(
+    try {
+      const createdUser = await firebase
+        .auth()
+        .createUserWithEmailAndPassword(u.email, u.password);
+      return await db.collection("users").add(
         {
           name: u.name,
           email: u.email,
-          authId: createdUser?.id
+          authId: createdUser?.user.uid,
         },
         { merge: true }
-        );
-      } catch(e) {
-        console.error(e)
-      }
+      );
+    } catch (e) {
+      console.error(e);
+    }
   },
   listUsers: async () => {
     let list = [];
@@ -45,14 +46,18 @@ export default {
   listRecipesFavorite: async () => {
     let listFavorite = [];
     let results = await db.collection("recipeFavorites").get();
-    results.forEach((recipe) => listFavorite.push({ ...recipe.data(), id: recipe.id }));
+    results.forEach((recipe) =>
+      listFavorite.push({ ...recipe.data(), id: recipe.id })
+    );
     return listFavorite;
   },
   // selecionado a lista de recitas do usuario seguindo
   listRecipesUser: async () => {
     let listRecipesUser = [];
     let results = await db.collection("recipesUser").get();
-    results.forEach((recipe) => listRecipesUser.push({ ...recipe.data(), id: recipe.id }));
+    results.forEach((recipe) =>
+      listRecipesUser.push({ ...recipe.data(), id: recipe.id })
+    );
     return listRecipesUser;
   },
   addRecipe: async (recipe) => {
@@ -61,14 +66,16 @@ export default {
   },
   // Adicionar uma receita aos favortos
   addRecipeFavorites: async (userId, recipeId) => {
-    let AddReciperFovorites = await db.collection("favoriteRecipes").add({ userId, recipeId });
+    let AddReciperFovorites = await db
+      .collection("favoriteRecipes")
+      .add({ userId, recipeId });
     return AddReciperFovorites.get();
   },
   getRecipe: async (recipeId) => {
-    return await db.collection('recipes').doc(recipeId).get()
+    return await db.collection("recipes").doc(recipeId).get();
   },
   getRecipeFavorite: async (recipeId) => {
-    return await db.collection('recipeFavorites').doc(recipeId).get()
+    return await db.collection("recipeFavorites").doc(recipeId).get();
   },
   getRecipeImage: async (recipeId) => {
     const imgUrl = await storage.child(`recipes/${recipeId}`).getDownloadURL();
