@@ -9,8 +9,6 @@ import StarIcon from '@mui/icons-material/Star';
 export const RecipeCard = ({ recipe }) => {
     const navigate = useNavigate();
     const HandleEddRecipes = () => {
-        alert('Você esta entrando nos detalhes dessa receita')
-        console.log('você', recipe)
         navigate('/recipes/:id')
     }
     const texto = 'Enviado por'

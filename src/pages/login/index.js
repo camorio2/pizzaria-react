@@ -14,7 +14,7 @@ export const LoginScreen = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
-  const {user, setUser} = useContext(UserContext)
+  const { user, setUser } = useContext(UserContext)
   const ArrowBack = () => {
     navigate("/")
   }
@@ -23,16 +23,15 @@ export const LoginScreen = () => {
     const user = users.find(user => user.email === email);
     if (user.email == email &&
       user.password == password) {
-        const {password, ...info} = user
-        
-        setUser(info)
-        localStorage.setItem('user', JSON.stringify(info))
+      const { password, ...info } = user
+      setUser(info)
+      localStorage.setItem('user', JSON.stringify(info))
       navigate("/home")
     } else {
       alert('o campo de email nao esta preenchido')
     }
 
-    
+
 
     // const user = users.find(user => user.email === email)
     // if (user.password === password) {
@@ -69,7 +68,7 @@ export const LoginScreen = () => {
         <div>
           <p>Email:</p>
           <input
-            name='email' 
+            name='email'
             className='btn'
             type='email'
             onBlur="validacaoEmail(f1.email)"

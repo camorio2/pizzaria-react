@@ -3,21 +3,26 @@ import '../../AddRecipes/index.css'
 import Temotio from '../../../assets/timo.jpg'
 import { Navigation } from '../../../components/navigation'
 import { MenuItensPerfilUser } from '../../../components/logos/menu/menuPerfilUser'
+import { UserContext} from '../../../contexts/UserContext'
+import { useState } from 'react'
 
 
 export const PerfilUser = () => {
+    const[user, setUser] = useState(UserContext)
     const navegate = useNavigate()
     const eddUser = () => {
-
     }
     const backLogin = () => {
+        let items = JSON.parse(localStorage.getItem("item"));
+        if (items) {
+            localStorage.removeItem("item", JSON.stringify(items));
+        }
         navegate('/')
     }
-
     return (
         <>
             <div className="tela userPerfil">
-                <MenuItensPerfilUser/>
+                <MenuItensPerfilUser />
                 <section>
                     <div className="imgSvg">
                         <img src={Temotio} alt="uma foto do perfil" onclick={eddUser} />
@@ -32,7 +37,7 @@ export const PerfilUser = () => {
                         <p>Deste Agosto de 2021</p>
                     </div>
                 </section>
-                <Navigation/>
+                <Navigation />
                 <div className="informacoes">
                     <div className="infoUserName">
                         <p className="moresNames">Nome</p>

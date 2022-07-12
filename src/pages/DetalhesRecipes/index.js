@@ -4,10 +4,13 @@ import StarHalfIcon from '@mui/icons-material/StarHalf';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Temotio from '../../assets/timo.jpg'
 import { useNavigate, useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Api from '../../Api';
+import { UserContext } from '../../contexts/UserContext';
 
 export const DetailsRecipes = () => {
+    const { user } = useContext(UserContext)
+console.log('user', user)
     const { id } = useParams()
     const navigator = useNavigate();
     const [recipeData, setRecipeData] = useState()
@@ -20,19 +23,15 @@ export const DetailsRecipes = () => {
             const data = doc.data()
             setRecipeData(data)
         } else {
-            // doc.data() will be undefined in this case
+            // doc.data() wilsl be undefined in this case
             console.log("No such document!");
         }
     }, [])
-    const [addRecipeFavorite, setAddRecipeFavorite] = useState(
-        {
-            title: recipeData?.title,
-            description: recipeData?.description,
-            ranking: recipeData?.ranking,
-        }
-    );
+  
     const AddFovorites = async () => {
-        const result = await Api.addRecipeFavorites(addRecipeFavorite);
+        const data = {userId: user?.id, recipeId: id}
+        console.log('data', data)
+        // const result = await Api.addRecipeFavorites(data);
         alert('Este receita está sendo addicionado na página de favoritos')
     }
     return (

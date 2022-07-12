@@ -11,14 +11,20 @@ export const storage = firebase.storage().ref();
 
 export default {
   createUser: async (u) => {
-    return await db.collection("users").doc(u.id).set(
-      {
-        name: u.name,
-        email: u.email,
-        password: u.password,
-      },
-      { merge: true }
-    );
+    try{
+
+      const createdUser = await firebase.auth().createUserWithEmailAndPassword(u.email, u.password)
+      return await db.collection("users").set(
+        {
+          name: u.name,
+          email: u.email,
+          authId: createdUser?.id
+        },
+        { merge: true }
+        );
+      } catch(e) {
+        console.error(e)
+      }
   },
   listUsers: async () => {
     let list = [];
@@ -32,21 +38,21 @@ export default {
 
     console.log("items:", images);
     let results = await db.collection("recipes").get();
-    results.forEach((recipe) => list.push({...recipe.data(), id: recipe.id}));
+    results.forEach((recipe) => list.push({ ...recipe.data(), id: recipe.id }));
     return list;
   },
   // selecionado a lista de recita favorita
   listRecipesFavorite: async () => {
     let listFavorite = [];
     let results = await db.collection("recipeFavorites").get();
-    results.forEach((recipe) => listFavorite.push({...recipe.data(), id: recipe.id}));
+    results.forEach((recipe) => listFavorite.push({ ...recipe.data(), id: recipe.id }));
     return listFavorite;
   },
   // selecionado a lista de recitas do usuario seguindo
   listRecipesUser: async () => {
     let listRecipesUser = [];
     let results = await db.collection("recipesUser").get();
-    results.forEach((recipe) => listRecipesUser.push({...recipe.data(), id: recipe.id}));
+    results.forEach((recipe) => listRecipesUser.push({ ...recipe.data(), id: recipe.id }));
     return listRecipesUser;
   },
   addRecipe: async (recipe) => {
@@ -54,8 +60,8 @@ export default {
     return createdRecipe.get();
   },
   // Adicionar uma receita aos favortos
-  addRecipeFavorites: async (recipe) => {
-    let AddReciperFovorites = await db.collection("recipeFavorites").add(recipe);
+  addRecipeFavorites: async (userId, recipeId) => {
+    let AddReciperFovorites = await db.collection("favoriteRecipes").add({ userId, recipeId });
     return AddReciperFovorites.get();
   },
   getRecipe: async (recipeId) => {

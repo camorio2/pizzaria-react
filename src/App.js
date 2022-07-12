@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import "./App.css";
 
 import { LoginScreen } from "./pages/login";
@@ -18,22 +18,23 @@ import { DetailsRecipes } from "./pages/DetalhesRecipes";
 
 export default () => {
   return <>
-   <UserProvider>
+    <UserProvider>
       <Routes>
         <Route path="/" element={< WelcomePage />} />
         <Route path="/login" element={<LoginScreen />} />
         <Route path="/cadastro" element={<CadastroScreen />} />
         <Route path="/home" element={<HomeScreen />} />
-        <Route path="/recipes/:id" element={<DetailsRecipes />}/>
+        <Route path="/recipes/:id" element={<DetailsRecipes />} />
         {/* <Route path="/recipes/:id/edit" element={<DetailsRecipes />}/> */}
         <Route path="/add-recipes" element={<AddRecipesUser />} />
         <Route path="/seguindo" element={<Seguindo />} />
         <Route path="/perfiluser" element={<PerfilUser />} />
-        <Route path="/perfilSeguindo" element={<UserFavoritePage />}/>
-        <Route path="/perfilPreferencia" element={<PerfilUserPrefrencia />}/>
-        <Route path="/perfilminhasreceitas" element={<MyRecipesPage />}/>
+        <Route path="/perfilSeguindo" element={<UserFavoritePage />} />
+        <Route path="/perfilPreferencia" element={<PerfilUserPrefrencia />} />
+        <Route path="/perfilminhasreceitas" element={<MyRecipesPage />} />
       </Routes>
     </UserProvider>
-    </>
-  
+
+  </>
+
 };

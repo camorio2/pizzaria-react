@@ -1,22 +1,15 @@
 import React, { useContext } from "react";
 import './welcome.css';
-
 import { navigate, useNavigate } from "react-router-dom";
 import { UserContext } from "../../contexts/UserContext";
-import Grupo71 from '../../assets/Group 71.png'
-
-
+import Grupo71 from '../../assets/Group 71.png';
 export const WelcomePage = () => {
-
-    const {user } = useContext(UserContext)
-
-
+    const { user } = useContext(UserContext)
     const navigate = useNavigate();
     var login = "login"
     var registro = "Cadastro"
     const windows = () => {
         const pages = window.prompt("Para vai navegar??")
-
         if (pages.toLowerCase() == login) {
             alert(`Seja bem vindo a ${pages.toLowerCase()}`);
             navigate("/login");
@@ -24,7 +17,10 @@ export const WelcomePage = () => {
             alert(`Seja bem vindo a ${pages.toLowerCase()}`);
             navigate("/cadastro");
         } else {
-            alert(`Não tem uma página com este nome ${pages.toLowerCase()} <br>
+            alert(
+                `Não tem uma página com este nome ${pages.toLowerCase(
+                )
+                } <br>
             por favor volte a tentar
             `)
         }
@@ -35,8 +31,7 @@ export const WelcomePage = () => {
     const cadastro = () => {
         navigate("/login");
     }
-
-    if(user) {
+    if (user) {
         //se já houver dados de usuário, redireciona para a home
         navigate('/home')
     }
@@ -54,7 +49,7 @@ export const WelcomePage = () => {
 
 
                 <div className="grupoA">
-                    <img src={Grupo71}/>
+                    <img src={Grupo71} />
                 </div>
 
                 <div className="groupB">
@@ -71,7 +66,7 @@ export const WelcomePage = () => {
                     <a className="p" onClick={cadastro}>
                         <p>Já Tenho Conta</p>
                     </a>
-                    
+
                 </div>
             </div>
 

@@ -69,7 +69,7 @@ export const PopularLogos = () => {
                 <img
                     onClick={hndlePerfilUser}
                     src={
-                        Temotio
+                      Temotio
                     }
                     alt=""
                 ></img>
